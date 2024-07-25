@@ -1,0 +1,16 @@
+.exam-card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 80px 0;
+    gap: 100px;
+}
+
+.exam-card button{
+    background-color: #0a4f98;
+    border-radius: 5px;
+}
+
+.exam-icon{
+    width: 25%;
+}
