@@ -76,6 +76,7 @@ function SearchPage() {
       {loading && <p>Loading...</p>}
 
       {!(media.name === "GitHub") && <h2>Not Implemented</h2>}
+      {noUser && <h2>No User</h2>}
 
       <div className="users">
         {currentUsers.map((user)=> 
@@ -84,7 +85,6 @@ function SearchPage() {
       </div>
 
         
-      {noUser && <h3>No User</h3>}
       {media.name === "GitHub" && <PaginationComponent
           totalPages={totalPages}
           currentPage={currentPage}

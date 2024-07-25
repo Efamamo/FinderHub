@@ -52,33 +52,37 @@ const ContactLink = styled.a`
 const About = () => {
   return (
     <AboutPageContainer>
-      <Heading>About Us</Heading>
+      <Heading>About Me</Heading>
       <Section>
         <SectionHeading>Welcome to FinderHub!</SectionHeading>
         <Paragraph>
-          At FinderHub, our mission is to make connecting with people across
-          social media platforms seamless and intuitive. Whether you’re looking
-          for friends, colleagues, or influencers, we simplify your search by
-          integrating top social media networks into one powerful tool.
+          Hi, I'm Ephrem Mamo. My mission with FinderHub is to make connecting
+          with people across social media platforms seamless and intuitive.
+          Whether you’re looking for friends, colleagues, or influencers, I aim
+          to simplify your search by integrating top social media networks into
+          one powerful tool.
         </Paragraph>
       </Section>
       <Section>
-        <SectionHeading>Our Vision</SectionHeading>
+        <SectionHeading>My Vision</SectionHeading>
         <Paragraph>
-          We believe in the power of connections. In a world that’s increasingly
+          I believe in the power of connections. In a world that’s increasingly
           digital, finding and reaching out to the right people should be
-          effortless. Our vision is to bridge the gap between users and their
+          effortless. My vision is to bridge the gap between users and their
           online presence, enhancing the way you interact with the digital
           world.
         </Paragraph>
       </Section>
       <Section>
-        <SectionHeading>What We Do</SectionHeading>
+        <SectionHeading>What I Do</SectionHeading>
         <Paragraph>
           FinderHub allows you to search across the top 10 social media
           platforms:
         </Paragraph>
         <List>
+          <h3>Currently Working</h3>
+          <ListItem>GitHub</ListItem>
+          <h3>On Progress</h3>
           <ListItem>Facebook</ListItem>
           <ListItem>Twitter</ListItem>
           <ListItem>Instagram</ListItem>
@@ -88,29 +92,27 @@ const About = () => {
           <ListItem>Reddit</ListItem>
           <ListItem>Pinterest</ListItem>
           <ListItem>YouTube</ListItem>
-          <ListItem>GitHub</ListItem>
         </List>
         <Paragraph>
-          By unifying these platforms, we ensure you have all the information
-          you need in one place. Our tool is designed for simplicity and
-          efficiency, helping you find exactly who or what you're looking for
-          without the hassle.
+          By unifying these platforms, I ensure you have all the information you
+          need in one place. My tool is designed for simplicity and efficiency,
+          helping you find exactly who or what you're looking for without the
+          hassle.
         </Paragraph>
       </Section>
       <Section>
-        <SectionHeading>Our Team</SectionHeading>
+        <SectionHeading>About Me</SectionHeading>
         <Paragraph>
-          We are a dedicated group of developers, designers, and visionaries who
-          are passionate about creating innovative solutions. Each team member
-          brings unique skills and perspectives, driving us to continually
-          improve and refine our services.
+          I'm a dedicated developer, designer, and visionary passionate about
+          creating innovative solutions. My unique skills and perspectives drive
+          me to continually improve and refine my services.
         </Paragraph>
       </Section>
       <Section>
         <SectionHeading>Get In Touch</SectionHeading>
         <Paragraph>
-          Have questions, feedback, or just want to say hello? We’d love to hear
-          from you! Reach out to us at{" "}
+          Have questions, feedback, or just want to say hello? I’d love to hear
+          from you! Reach out to me at{" "}
           <ContactLink href="mailto:ephremmamo555@gmail.com">
             Ephrem Mamo
           </ContactLink>
