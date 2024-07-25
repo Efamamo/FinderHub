@@ -2,6 +2,7 @@ import {createBrowserRouter} from 'react-router-dom'
 import Home from './componentes/Home/Home'
 import SocialMedias from './componentes/SocialMedia/SocialMedias';
 import About from './componentes/About/About';
+import SearchPage from './componentes/SearchPage/SearchPage';
 
 
 const routes = [
@@ -16,6 +17,10 @@ const routes = [
     {
         path: '/socials',
         element: <SocialMedias/>
+    },
+    {
+        path: '/socials/search',
+        element: <SearchPage/>
     }
 ]
 

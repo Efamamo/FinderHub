@@ -1,5 +1,5 @@
 import "./Search.css";
-import cancel from "../images/cancel-svgrepo-com.svg";
+import cancel from "../../images/cancel-svgrepo-com.svg";
 import { useState } from "react";
 function Search(props) {
   const [current, setCurrent] = useState("");
