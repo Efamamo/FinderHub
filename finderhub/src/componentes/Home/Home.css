@@ -33,6 +33,11 @@
 
 }
 
+.home a{
+    color: white;
+    text-decoration: none;
+}
+
 .start-button{
     display: block;
     width: 180px;
