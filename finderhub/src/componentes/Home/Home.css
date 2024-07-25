@@ -1,4 +1,52 @@
+
 .home{
-    width: 80%;
+    height: 60vh;
+}
+.home>div{
+    width: 70%;
+    display: flex;
+    margin: 50px auto;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+}
+
+.home img{
+    width: 30%;
+}
+
+.social-media-container{
+    display: flex;
+    width: 70%;
     margin: auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.home>div>p{
+    width: 75%;
+    font-size: 1.15em;
+    margin: auto;
+    letter-spacing: 1.4px;
+
+
+}
+
+.start-button{
+    display: block;
+    width: 200px;
+    margin: auto;
+    padding: 10px 10px;
+    background-color: rgb(32, 107, 219);
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: ease 1.2s;
+}
+
+.start-button:hover{
+    transform: scale(0.95);
 }
