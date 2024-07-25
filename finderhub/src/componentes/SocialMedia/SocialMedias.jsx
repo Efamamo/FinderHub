@@ -7,13 +7,12 @@ import "./SocialMedias.css";
 
 function SocialMedias() {
   return (
-    <>
-      <Header />
+    
       <div className="social-medias">
         <div className="social-media-container">
           <h2>Choose The Social Media</h2>
           {socialMedia.map((sc, i) => (
-            <Link to="/socials/search">
+            <Link to={`/socials/${sc.name}`}>
               <SocialMediaCard
                 name={sc.name}
                 description={sc.desc}
@@ -23,8 +22,6 @@ function SocialMedias() {
           ))}
         </div>
       </div>
-      <Footer />
-    </>
   );
 }
 

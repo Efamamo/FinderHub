@@ -1,20 +1,18 @@
 import Search from "../core/Search";
-import Footer from "../Footer/Footer";
-import Header from "../Header/Header";
 import tiktok from '../../images/tiktok.png'
 import './SearchPage.css'
+import socialMediaData from "../../data/socialMediaData";
+import { useParams } from "react-router-dom";
 
 function SearchPage() {
+    const param = useParams()
+    const media = socialMediaData.find(sm => sm.name === param.name)
   return (
-    <>
-      <Header />
       <div className="search-page">
-        <img src={tiktok} alt="tiktok"/>
-        <h2>Welcome to X Search Page</h2>
+        <img src={media.image} alt="tiktok"/>
+        <h2>Welcome to {media.name} Search Page</h2>
         <Search />
       </div>
-      <Footer />
-    </>
   );
 }
 

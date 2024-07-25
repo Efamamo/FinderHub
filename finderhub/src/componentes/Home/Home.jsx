@@ -7,8 +7,7 @@ import Footer from "../Footer/Footer";
 import { Link } from "react-router-dom";
 function Home() {
   return (
-    <>
-      <Header />
+    
       <div className="home">
         <div>
           <p>
@@ -24,8 +23,6 @@ function Home() {
         </div>
         <Link to="/socials"><button className="start-button">Get Started</button></Link>
       </div>
-      <Footer />
-    </>
   );
 }
 
