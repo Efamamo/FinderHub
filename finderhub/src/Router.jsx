@@ -19,19 +19,35 @@ function Page(props) {
 const routes = [
   {
     path: "/",
-    element: <Page><Home /></Page>,
+    element: (
+      <Page>
+        <Home />
+      </Page>
+    ),
   },
   {
     path: "/about",
-    element: <Page><About /></Page>,
+    element: (
+      <Page>
+        <About />
+      </Page>
+    ),
   },
   {
     path: "/socials",
-    element: <Page><SocialMedias /></Page>,
+    element: (
+      <Page>
+        <SocialMedias />
+      </Page>
+    ),
   },
   {
     path: "/socials/:name",
-    element: <Page><SearchPage /></Page>,
+    element: (
+      <Page>
+        <SearchPage />
+      </Page>
+    ),
   },
 ];
 

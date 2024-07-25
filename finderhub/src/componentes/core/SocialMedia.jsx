@@ -11,6 +11,11 @@ import pintrest from '../../images/pintrest.png'
 
 const socialMedia = [
     {
+        name: "GitHub",
+        desc: "GitHub is a platform for version control and collaboration, allowing developers to host and review code, manage projects, and build software.",
+        image: github
+    },
+    {
         name: "TikTok",
         desc: "TikTok is a popular social media platform for creating, sharing, and discovering short music videos.",
         image: tiktok
@@ -40,11 +45,7 @@ const socialMedia = [
         desc: "LinkedIn is a business and employment-oriented online service that operates via websites and mobile apps.",
         image: linkedin
     },
-    {
-        name: "GitHub",
-        desc: "GitHub is a platform for version control and collaboration, allowing developers to host and review code, manage projects, and build software.",
-        image: github
-    },
+    
     {
         name: "Snapchat",
         desc: "Snapchat is a multimedia messaging app that allows users to share images and videos that disappear after being viewed.",

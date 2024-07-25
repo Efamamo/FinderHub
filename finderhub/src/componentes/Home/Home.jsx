@@ -1,9 +1,5 @@
-import socialMedia from "../core/SocialMedia";
-import SocialMediaCard from "../core/SocialMediaCard";
-import Header from "../Header/Header";
 import "./Home.css";
 import people from "../../images/search.png";
-import Footer from "../Footer/Footer";
 import { Link } from "react-router-dom";
 function Home() {
   return (

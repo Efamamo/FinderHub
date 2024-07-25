@@ -42,15 +42,17 @@
     display: block;
     width: 180px;
     margin: auto;
-    padding: 15px 30px;
+    padding: 12px 30px;
     background-color: rgb(32, 107, 219);
     color: white;
+    font-size: 15px;
     font-weight: bold;
     border-radius: 5px;
     border: none;
     cursor: pointer;
     transition: ease 1.2s;
 }
+
 
 .start-button:hover{
     transform: scale(0.95);

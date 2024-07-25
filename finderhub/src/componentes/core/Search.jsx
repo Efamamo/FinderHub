@@ -6,13 +6,19 @@ function Search(props) {
 
   function handleChange(event) {
     setCurrent(event.target.value);
-    props.onSearch(event.target.value);
+  }
+
+  function handleKeyDown(e){
+    if (e.key == "Enter"){
+    props.onSearch(current);
+  }
   }
 
   function cancelSearch() {
-    props.onSearch("");
     setCurrent("");
+    props.setUser([])
   }
+  
   return (
     <div className="search-container">
       <span className="icon">
@@ -28,8 +34,10 @@ function Search(props) {
         </svg>
       </span>
       <input
+      ref={props.refer}
         value={current}
         type="text"
+        onKeyDown={handleKeyDown}
         onChange={handleChange}
         placeholder="Search"
         className="search-input"
