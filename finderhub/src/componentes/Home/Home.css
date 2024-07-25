@@ -1,11 +1,14 @@
 
 .home{
-    height: 60vh;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .home>div{
     width: 70%;
     display: flex;
-    margin:  auto;
+    margin: 0  auto;
     align-items: center;
     justify-content: center;
     gap: 100px;
