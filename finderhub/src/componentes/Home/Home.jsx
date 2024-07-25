@@ -3,6 +3,7 @@ import SocialMediaCard from "../core/SocialMediaCard";
 import Header from "../Header/Header";
 import './Home.css'
 import people from '../../images/search.png'
+import Footer from "../Footer/Footer";
 function Home() {
   return (
     <>
@@ -30,6 +31,7 @@ function Home() {
         <button className="start-button">Get Started</button>
 
       </div>
+      <Footer/>
     </>
   );
 }
