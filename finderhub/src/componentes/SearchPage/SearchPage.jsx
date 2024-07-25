@@ -5,6 +5,7 @@ import socialMediaData from "../../data/socialMediaData";
 import { useParams } from "react-router-dom";
 import PaginationComponent from "../core/Pagination";
 import UserCard from "../core/UserCard";
+import api from "../../apis/api";
 
 function SearchPage() {
   const param = useParams();
@@ -18,54 +19,47 @@ function SearchPage() {
   const [currentPage, setCurrentPage] = useState(1);
 
   const totalPages = Math.ceil(users.length / 6);
-  const [currentUsers, setCurrentUsers] = useState(users.slice(0,6))
+  const [currentUsers, setCurrentUsers] = useState(users.slice(0, 6));
   const handlePageChange = (page) => {
     setCurrentPage(page);
-    setCurrentUsers(users.slice(page*6,(page+1)*6))
+    setCurrentUsers(users.slice(page * 6, (page + 1) * 6));
   };
 
   async function handleSubmit() {
-    if (media.name === "GitHub"){
-    const username = userRef.current.value.trim();
-    if (username === "") {
-      setError(true);
-      setUsers([]);
-      setNoUser(false);
-      return;
-    }
-
-    setError(false);
-    setLoading(true);
-
-    try {
-      const res = await fetch(
-        `https://api.github.com/search/users?q=${username}`
-      );
-
-      if (!res.ok) {
-        throw new Error("Network response was not ok");
-      }
-
-      const data = await res.json();
-      if (data.items == 0) {
-        setNoUser(true);
-      } else {
+    if (media.name === "GitHub") {
+      const username = userRef.current.value.trim();
+      if (username === "") {
+        setError(true);
+        setUsers([]);
         setNoUser(false);
+        return;
       }
-      setUsers(data.items || []);
 
-    } catch (error) {
-      setUsers([]);
-    } finally {
-      setLoading(false);
+      setError(false);
+      setLoading(true);
+
+      try {
+        const res = await api.get(`/users?q=${username}`);
+        console.log(res)
+        const data = res.data;
+        if (data.items == 0) {
+          setNoUser(true);
+        } else {
+          setNoUser(false);
+        }
+        setUsers(data.items || []);
+      } catch (error) {
+        console.log(error)
+        setUsers([]);
+      } finally {
+        setLoading(false);
+      }
     }
-}
   }
 
-  useEffect(()=>{
-    setCurrentUsers(users.slice(0,6))
-
-  },[users])
+  useEffect(() => {
+    setCurrentUsers(users.slice(0, 6));
+  }, [users]);
 
   return (
     <div className="search-page">
@@ -79,19 +73,23 @@ function SearchPage() {
       {noUser && <h2>No User</h2>}
 
       <div className="users">
-        {currentUsers.map((user)=> 
-        <UserCard key={user.id} name={user.login} image={user.avatar_url} link={user.html_url}/>
-        )}
+        {currentUsers.map((user) => (
+          <UserCard
+            key={user.id}
+            name={user.login}
+            image={user.avatar_url}
+            link={user.html_url}
+          />
+        ))}
       </div>
 
-        
-      {media.name === "GitHub" && <PaginationComponent
+      {media.name === "GitHub" && (
+        <PaginationComponent
           totalPages={totalPages}
           currentPage={currentPage}
           onPageChange={handlePageChange}
-        />}
-      
-      
+        />
+      )}
     </div>
   );
 }
