@@ -1,9 +1,12 @@
 
 .home{
-    height: 70vh;
+    height: 65vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+.home h1{
+    text-align: center;
 }
 .home>div{
     width: 70%;
@@ -32,6 +35,7 @@
     font-size: 1.15em;
     margin: auto;
     letter-spacing: 1.4px;
+    line-height: 1.5;
 
 
 }
