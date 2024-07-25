@@ -25,6 +25,7 @@ function SearchPage() {
   };
 
   async function handleSubmit() {
+    if (media.name === "GitHub"){
     const username = userRef.current.value.trim();
     if (username === "") {
       setError(true);
@@ -58,6 +59,7 @@ function SearchPage() {
     } finally {
       setLoading(false);
     }
+}
   }
 
   useEffect(()=>{
@@ -73,19 +75,21 @@ function SearchPage() {
       {error && <p style={{ color: "red" }}>Please Enter a username</p>}
       {loading && <p>Loading...</p>}
 
-     
+      {!(media.name === "GitHub") && <h2>Not Implemented</h2>}
+
       <div className="users">
         {currentUsers.map((user)=> 
         <UserCard key={user.id} name={user.login} image={user.avatar_url} link={user.html_url}/>
         )}
       </div>
+
         
       {noUser && <h3>No User</h3>}
-       <PaginationComponent
+      {media.name === "GitHub" && <PaginationComponent
           totalPages={totalPages}
           currentPage={currentPage}
           onPageChange={handlePageChange}
-        />
+        />}
       
       
     </div>

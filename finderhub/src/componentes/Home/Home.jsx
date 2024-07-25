@@ -3,7 +3,7 @@ import people from "../../images/search.png";
 import { Link } from "react-router-dom";
 function Home() {
   return (
-    
+    <div style={{display: "flex", alignItems:"center", height: "80vh"}}>
       <div className="home">
         <div>
           <p>
@@ -19,6 +19,7 @@ function Home() {
         </div>
         <Link to="/socials"><button className="start-button">Get Started</button></Link>
       </div>
+    </div> 
   );
 }
 
