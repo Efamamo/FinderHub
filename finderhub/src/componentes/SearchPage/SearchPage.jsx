@@ -18,7 +18,7 @@ function SearchPage() {
   const [noUser, setNoUser] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
 
-  const totalPages = Math.ceil(users.length / 6);
+  const totalPages = Math.ceil(users.length / 6)-1;
   const [currentUsers, setCurrentUsers] = useState(users.slice(0, 6));
   const handlePageChange = (page) => {
     setCurrentPage(page);
@@ -40,7 +40,6 @@ function SearchPage() {
 
       try {
         const res = await api.get(`/users?q=${username}`);
-        console.log(res)
         const data = res.data;
         if (data.items == 0) {
           setNoUser(true);
@@ -49,7 +48,6 @@ function SearchPage() {
         }
         setUsers(data.items || []);
       } catch (error) {
-        console.log(error)
         setUsers([]);
       } finally {
         setLoading(false);
