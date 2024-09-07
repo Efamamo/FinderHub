@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom";
 import PaginationComponent from "../core/Pagination";
 import UserCard from "../core/UserCard";
 import api from "../../apis/api";
+import axios from "axios";
 
 function SearchPage() {
   const param = useParams();
@@ -52,6 +53,42 @@ function SearchPage() {
       } finally {
         setLoading(false);
       }
+    }
+    else if (media.name == "Twitter"){
+      const username = userRef.current.value.trim();
+      if (username === "") {
+        setError(true);
+        setUsers([]);
+        setNoUser(false);
+        return;
+      }
+
+      setError(false);
+      setLoading(true);
+
+      try {
+        
+        
+        try {
+          const res = await axios.get(`http://localhost:3333/twitter/user/${username}`)
+          console.log(res)
+        } catch (error) {
+          console.error(error)
+        }
+        
+        // const data = res.data;
+        // if (data.items == 0) {
+        //   setNoUser(true);
+        // } else {
+        //   setNoUser(false);
+        // }
+        // setUsers(data.items || []);
+      } catch (error) {
+        setUsers([]);
+      } finally {
+        setLoading(false);
+      }
+
     }
   }
 
